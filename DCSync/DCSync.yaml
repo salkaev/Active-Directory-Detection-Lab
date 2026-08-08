@@ -1,0 +1,27 @@
+title: DCSync Attack Detection
+id: d30fc098-d411-485a-a827-5916d1e23fba
+status: experimental
+description: Detects attempts to replicate directory changes (DCSync) by non-domain-controller accounts.
+author: Ilya Salkaev
+date: 2026-08-08
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4662
+    ObjectType|contains: 
+      - '1131f6aa-9c07-11d1-f79f-00c04fc2dcd2'
+      - '1131f6ab-9c07-11d1-f79f-00c04fc2dcd2'
+      - '89e95b76-444d-4c62-991a-0facbeda640c'
+  filter_domain_controllers:
+    TargetUserName|endswith: '$'
+  condition: selection and not filter_domain_controllers
+falsepositives:
+  - Legitimate replication by domain controllers
+  - Backup software
+  - Administrative tools
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1003.006
