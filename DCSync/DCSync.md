@@ -150,7 +150,7 @@ The lab successfully demonstrated:
 5. Configuration of auditing to log Event ID 4662, enabling detection of such attacks.
 
 ---
-![Attack detection](screenshots/06_Attack_detection)
+![Attack detection](screenshots/06_Attack_detection.png)
 
 ## Detection Recommendations
 
