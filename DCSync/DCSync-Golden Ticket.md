@@ -1,9 +1,3 @@
-Вы правы! Я случайно пропустил этот скриншот в отчёте. Это важный скриншот, показывающий **сам хеш NTLM**, который был получен в результате DCSync-атаки. Я должен был его добавить.
-
-Исправленный отчёт:
-
----
-
 # DCSync & Golden Ticket Attack — AD Lab Report
 
 **Lab Environment:** `salkaev.local` (Windows Server Active Directory Domain Controller)  
